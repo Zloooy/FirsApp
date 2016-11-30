@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     int n=0;
-    String[] quest=new String[]{"Вы человек?","Точно человек?"};
+    Question[] quest=new Question[]{new Question("Вы человек?"),new Question("Точно человек?")};
     private TextView edtext;
     @Override
     public void onCreate(Bundle savedInstanceState) {
