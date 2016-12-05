@@ -18,4 +18,16 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="74dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Назат"
+        android:id="@+id/Back"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/answer"
+        android:layout_alignStart="@+id/answer"
+        android:layout_marginBottom="110dp"
+        android:onClick="Back"
+        />
 </RelativeLayout>

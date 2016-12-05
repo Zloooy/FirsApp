@@ -1,5 +1,6 @@
 package com.example.student1.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,5 +38,9 @@ public class MainActivity extends AppCompatActivity {
     public void onLast(View v){
         n++;
         updateUI();
+    }
+    public void Cheat(View v){
+        Intent i=new Intent(MainActivity.this,CheatActivity.class);
+        startActivity(i);
     }
 }

@@ -57,8 +57,22 @@
         android:layout_height="wrap_content"
         android:text="Нет"
         android:id="@+id/onNo"
-        android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/tw"
         android:onClick="onNo"
+        android:layout_alignTop="@+id/onYes"
+        android:layout_toRightOf="@+id/onYes"
+        android:layout_toEndOf="@+id/onYes"
+        android:layout_marginLeft="65dp"
+        android:layout_marginStart="65dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ОБМАНИ МЕНЯ!!!"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/nbtn"
+        android:layout_alignEnd="@+id/nbtn"
+        android:onClick="Cheat"
         />
 </RelativeLayout>
