@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,50 +7,64 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context="com.example.student1.myapplication.MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="CHEATED"
+        android:id="@+id/cheated"
+        android:layout_gravity="end" />
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Hello World!"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/tw"
         android:textStyle="bold|italic"
-        android:editable="true" />
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:baselineAligned="false"
+        >
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last"
+            android:id="@+id/lbtn"
+            android:onClick="onLast"
+            android:layout_gravity="start"
+            android:layout_alignParentLeft="true" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Next"
         android:id="@+id/nbtn"
         android:onClick="onNext"
-        android:layout_alignTop="@+id/lbtn"
-        android:layout_toEndOf="@+id/onNo" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Last"
-        android:id="@+id/lbtn"
-        android:onClick="onLast"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="119dp" />
-
+        android:layout_gravity="end"
+        />
+    </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Да"
         android:id="@+id/onYes"
-        android:layout_alignWithParentIfMissing="false"
-        android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/lbtn"
         android:onClick="onYes"
         android:layout_alignParentRight="false" />
-
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
@@ -63,16 +77,13 @@
         android:layout_toEndOf="@+id/onYes"
         android:layout_marginLeft="65dp"
         android:layout_marginStart="65dp" />
-
+</LinearLayout>
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ОБМАНИ МЕНЯ!!!"
         android:id="@+id/button"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/nbtn"
-        android:layout_alignEnd="@+id/nbtn"
         android:onClick="Cheat"
         />
-</RelativeLayout>
+</LinearLayout>

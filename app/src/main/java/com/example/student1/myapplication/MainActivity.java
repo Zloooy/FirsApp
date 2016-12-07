@@ -15,16 +15,21 @@ public class MainActivity extends AppCompatActivity {
     private TextView edtext;
     private int n;
     private int len=quest.length;
+    boolean chtd=false;
+    TextView cheated;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         n=0;
+        boolean chtd=getIntent().getBooleanExtra("cheated",false);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         edtext = (TextView)findViewById(R.id.tw);
+        cheated = (TextView)findViewById(R.id.cheated);
         updateUI();
     }
     public void updateUI(){
         edtext.setText(quest[n].getText());
+        cheated.setText(chtd?"CHEATED":"");
     }
     public void onYes(View v) {
     Toast.makeText(getApplicationContext(),String.valueOf(quest[n].ask(true)),Toast.LENGTH_LONG).show();
@@ -34,17 +39,20 @@ public class MainActivity extends AppCompatActivity {
     }
     public void onNext(View v){
         n=nextn(-1);
+        chtd=false;
         updateUI();
     }
     public void onLast(View v){
         n=nextn(-1);
+        chtd=false;
         updateUI();
     }
     public void Cheat(View v){
         Intent i=new Intent(MainActivity.this,CheatActivity.class);
+        i.putExtra("ans",quest[n].getAnswer());
         startActivity(i);
     }
     public int nextn(int dif){
-        return (dif+n>=0?dif+n<len?dif+n:dif+n-len:len-dif+n);
+        return (dif+n>=0?dif+n<len?dif+n:dif+n-len:len-dif-n-1);
     }
 }

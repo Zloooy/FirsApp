@@ -5,14 +5,21 @@ package com.example.student1.myapplication;
 public class Question {
     private String text;
     boolean answer;
-    Question(String s,boolean ans){
-        text=s;
-        answer=ans;
+
+    Question(String s, boolean ans) {
+        text = s;
+        answer = ans;
     }
-    String getText(){
+
+    String getText() {
         return text;
     }
-    boolean ask(boolean b){
-        return b==answer;
+
+    boolean ask(boolean b) {
+        return b == answer;
+    }
+
+    boolean getAnswer() {
+        return answer;
     }
 }
