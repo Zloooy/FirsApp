@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     Question[] quest=new Question[]{new Question("Вы человек?",true),new Question("Точно человек?",true)};
     private TextView edtext;
     private int n;
+    private int len=quest.length;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         n=0;
@@ -32,15 +33,18 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),quest[n].ask(false)+"",Toast.LENGTH_SHORT).show();
     }
     public void onNext(View v){
-        n--;
+        n=nextn(-1);
         updateUI();
     }
     public void onLast(View v){
-        n++;
+        n=nextn(-1);
         updateUI();
     }
     public void Cheat(View v){
         Intent i=new Intent(MainActivity.this,CheatActivity.class);
         startActivity(i);
+    }
+    public int nextn(int dif){
+        return (dif+n>=0?dif+n<len?dif+n:dif+n-len:len-dif+n);
     }
 }
